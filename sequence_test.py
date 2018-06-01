@@ -1,5 +1,9 @@
 import unittest
-from itertools import izip_longest
+try:
+    from itertools import izip_longest
+except ImportError:
+    from itertools import zip_longest
+    izip_longest = zip_longest
 
 
 class AssertSequenceEqualTest(unittest.TestCase):
